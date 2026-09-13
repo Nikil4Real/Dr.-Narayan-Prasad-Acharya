@@ -114,10 +114,10 @@ export default function Home() {
 
       <section id="work" className="work-section section-padding">
         <div className="container">
-          <div className="section-intro">
-            <Reveal><p className="eyebrow">01 / THE WORK</p></Reveal>
-            <Reveal delay={70}><h2>Less <span>“sit back.”</span><br />More <em>“let's go.”</em></h2></Reveal>
-            <Reveal delay={140}><p className="intro-copy">The best learning doesn't feel like learning. It feels like a new idea landing, a team clicking, a room finding its rhythm.</p></Reveal>
+          <div className="section-intro work-intro">
+            <Reveal className="work-intro-label"><p className="eyebrow">01 / WORK</p></Reveal>
+            <Reveal className="work-photo" delay={70}><div className="work-photo-frame"><img src="/manus-storage/1000097855_195f0d3f.jpg" alt="Dr. Narayan speaking to an audience" /></div></Reveal>
+            <div className="work-intro-copy"><Reveal delay={120}><h2>Less <span>“sit back.”</span><br />More <em>“let's go.”</em></h2></Reveal><Reveal delay={190}><p className="intro-copy">The best learning doesn't feel like learning. It feels like a new idea landing, a team clicking, a room finding its rhythm.</p></Reveal></div>
           </div>
           <div className="service-list">
             {services.map((service, index) => <Reveal key={service.number} delay={index * 90}><article className="service-row"><span className="service-number">{service.number}</span><div className="service-main"><p className="service-tag">{service.tag}</p><h3>{service.title}</h3></div><p className="service-copy">{service.copy}</p><ArrowUpRight className="service-arrow" size={24} /></article></Reveal>)}
