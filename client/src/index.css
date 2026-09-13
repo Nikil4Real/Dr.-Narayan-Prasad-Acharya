@@ -83,3 +83,8 @@ button { font:inherit; }
   .hero-visual { justify-self:stretch; }
   .hero-photo-wrap { width:100%; }
 }
+
+/* Root-cause fix: the desktop hero flex row must stack its existing children on mobile. */
+@media (max-width: 850px) {
+  .hero-section { flex-direction:column; }
+}
