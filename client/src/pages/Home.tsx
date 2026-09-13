@@ -7,7 +7,6 @@ import {
   ChevronDown,
   ChevronUp,
   Linkedin,
-  Menu,
   MoveUpRight,
   Play,
   Quote,
@@ -82,7 +81,7 @@ export default function Home() {
           <a href="#contact" className="nav-cta" onClick={closeMenu}>Bring the energy <ArrowUpRight size={15} /></a>
         </nav>
         <button className="menu-btn" aria-label={menuOpen ? "Close menu" : "Open menu"} onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          {menuOpen ? <X size={22} /> : <img className="menu-image" src="/manus-storage/menu_dd303334.avif" alt="" />}
         </button>
       </header>
 
