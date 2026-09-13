@@ -45,7 +45,7 @@ const capabilities = [
 ];
 
 const faqs = [
-  ["Who is Saunak?", "An award-winning speaker, corporate trainer, author and personal empowerment strategist based in Kathmandu, Nepal."],
+  ["Who is Dr. Narayan?", "An award-winning speaker, corporate trainer, author and personal empowerment strategist based in Kathmandu, Nepal."],
   ["Can programs be customized?", "Yes. Every experience is designed around your people, goals, context and timeline."],
   ["Where does he speak?", "Across Nepal and internationally, including the USA, Australia, India, Bangladesh and Japan."],
 ];
@@ -73,7 +73,7 @@ export default function Home() {
     <main className="site-shell">
       <div className="grain" aria-hidden="true" />
       <header className={`nav-wrap ${scrolled ? "nav-scrolled" : ""}`}>
-        <a href="#top" className="brand" onClick={closeMenu}>SAUNAK<span>.</span></a>
+        <a href="#top" className="brand" onClick={closeMenu}>DR.NARAYAN<span>.</span></a>
         <nav className={`desktop-nav ${menuOpen ? "mobile-open" : ""}`}>
           <a href="#work" onClick={closeMenu}>What I do</a>
           <a href="#about" onClick={closeMenu}>About</a>
@@ -99,7 +99,7 @@ export default function Home() {
           <Reveal className="hero-visual" delay={180}>
             <div className="hero-photo-wrap">
               <div className="photo-accent" />
-              <img src="https://saunakbhatta.com/saunak/up2.png" alt="Saunak Bhatta speaking to an audience" className="hero-photo" />
+              <img src="https://saunakbhatta.com/saunak/up2.png" alt="Dr. Narayan speaking to an audience" className="hero-photo" />
               <div className="photo-caption"><span>LIVE FROM THE STAGE</span><span className="caption-line" /><span>27°42'N</span></div>
             </div>
             <div className="floating-note"><Sparkles size={16} /><span>Energy is<br /><strong>contagious.</strong></span></div>
@@ -127,15 +127,15 @@ export default function Home() {
 
       <section id="about" className="about-section section-padding">
         <div className="container about-grid">
-          <Reveal className="about-image-wrap"><div className="about-image-frame"><img src="https://saunakbhatta.com/new/saunak%20on%20center.jpg" alt="Saunak Bhatta on stage" /><div className="image-stamp">SB<br /><span>EST. 2007</span></div></div></Reveal>
-          <div className="about-copy"><Reveal><p className="eyebrow lavender">02 / THE HUMAN</p></Reveal><Reveal delay={70}><h2>Warm heart.<br /><span>Sharp point.</span></h2></Reveal><Reveal delay={140}><p>I'm Saunak — a curious human, obsessive observer and believer in the untapped magic of a room full of people. For 17 years, I've been translating psychology, leadership and lived experience into moments people actually remember.</p></Reveal><Reveal delay={190}><p>My work sits somewhere between a keynote, a conversation and a dare. It is high-energy, grounded in research and always built for the humans in front of me.</p></Reveal><Reveal delay={240}><a href="#contact" className="text-link light-link">More about my story <ArrowRight size={16} /></a></Reveal></div>
+          <Reveal className="about-image-wrap"><div className="about-image-frame"><img src="https://saunakbhatta.com/new/saunak%20on%20center.jpg" alt="Dr. Narayan on stage" /><div className="image-stamp">SB<br /><span>EST. 2007</span></div></div></Reveal>
+          <div className="about-copy"><Reveal><p className="eyebrow lavender">02 / THE HUMAN</p></Reveal><Reveal delay={70}><h2>Warm heart.<br /><span>Sharp point.</span></h2></Reveal><Reveal delay={140}><p>I'm Dr. Narayan — a curious human, obsessive observer and believer in the untapped magic of a room full of people. For 17 years, I've been translating psychology, leadership and lived experience into moments people actually remember.</p></Reveal><Reveal delay={190}><p>My work sits somewhere between a keynote, a conversation and a dare. It is high-energy, grounded in research and always built for the humans in front of me.</p></Reveal><Reveal delay={240}><a href="#contact" className="text-link light-link">More about my story <ArrowRight size={16} /></a></Reveal></div>
         </div>
       </section>
 
       <section id="proof" className="proof-section section-padding">
         <div className="container">
           <Reveal><div className="quote-mark"><Quote size={28} /></div></Reveal>
-          <Reveal delay={80}><blockquote>“Saunak doesn't just speak to a room.<br /><span>He wakes it up.</span>”</blockquote></Reveal>
+          <Reveal delay={80}><blockquote>“Dr. Narayan doesn't just speak to a room.<br /><span>He wakes it up.</span>”</blockquote></Reveal>
           <Reveal delay={150}><p className="quote-byline">— A room full of very awake people</p></Reveal>
           <div className="stats-grid">
             {[['17', 'Years on stage'], ['300K+', 'People trained'], ['6', 'Countries reached'], ['12M+', 'Digital likes']].map(([number, label], i) => <Reveal key={label} delay={i * 70}><div className="stat-card"><strong>{number}</strong><span>{label}</span></div></Reveal>)}
@@ -151,7 +151,7 @@ export default function Home() {
 
       <section id="contact" className="contact-section"><div className="contact-glow" /><div className="container contact-inner"><Reveal><p className="eyebrow">05 / YOUR MOVE</p></Reveal><Reveal delay={80}><h2>Got a room<br /><em>to wake up?</em></h2></Reveal><Reveal delay={150}><p>Tell me what you're building, where your people are stuck and what a little momentum could unlock.</p></Reveal><Reveal delay={210}><a href="mailto:saunak.bhatta@gmail.com" className="contact-button">Let's make it happen <MoveUpRight size={20} /></a></Reveal><Reveal delay={260}><div className="contact-meta"><span>saunak.bhatta@gmail.com</span><span>+977 980-108-0883</span><span className="socials"><Linkedin size={16} /> @saunakbhatta</span></div></Reveal></div></section>
 
-      <footer className="footer"><div className="container footer-inner"><a href="#top" className="brand">SAUNAK<span>.</span></a><span>© 2024 Saunak Bhatta. Keep moving.</span><a href="#top" className="back-top">Back to top ↑</a></div></footer>
+      <footer className="footer"><div className="container footer-inner"><a href="#top" className="brand">DR.NARAYAN<span>.</span></a><span>© 2024 Dr. Narayan. Keep moving.</span><a href="#top" className="back-top">Back to top ↑</a></div></footer>
     </main>
   );
 }
