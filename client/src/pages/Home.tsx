@@ -99,7 +99,7 @@ export default function Home() {
           <Reveal className="hero-visual" delay={180}>
             <div className="hero-photo-wrap">
               <div className="photo-accent" />
-              <img src="https://saunakbhatta.com/saunak/up2.png" alt="Dr. Narayan speaking to an audience" className="hero-photo" />
+              <img src="/manus-storage/1000097855_195f0d3f.jpg" alt="Dr. Narayan speaking at a podium" className="hero-photo" />
               <div className="photo-caption"><span>LIVE FROM THE STAGE</span><span className="caption-line" /><span>27°42'N</span></div>
             </div>
             <div className="floating-note"><Sparkles size={16} /><span>Energy is<br /><strong>contagious.</strong></span></div>
