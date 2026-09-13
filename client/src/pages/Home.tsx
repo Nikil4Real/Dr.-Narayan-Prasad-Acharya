@@ -91,7 +91,7 @@ export default function Home() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="container hero-inner">
           <div className="hero-copy">
-            <Reveal><p className="eyebrow"><span className="eyebrow-dot" /> SPEAKER / TRAINER / CATALYST</p></Reveal>
+            <Reveal><p className="eyebrow"><span className="eyebrow-dot" /> SPEAKER / TRAINER / DOCTOR</p></Reveal>
             <Reveal delay={90}><h1>Make the room<br /><em>move.</em></h1></Reveal>
             <Reveal delay={160}><p className="hero-lede">I help ambitious people and teams turn potential into momentum — with perspective, play and a little more pulse.</p></Reveal>
             <Reveal delay={220}><div className="hero-actions"><a href="#contact" className="button button-primary">Start a conversation <ArrowRight size={17} /></a><a href="#proof" className="text-link">See the proof <ArrowDownRight size={16} /></a></div></Reveal>
@@ -149,7 +149,7 @@ export default function Home() {
 
       <section className="faq-section section-padding"><div className="container faq-grid"><Reveal><div><p className="eyebrow lavender">04 / GOOD TO KNOW</p><h2>Curious?<br /><span>Good.</span></h2><p className="faq-lede">The short answers, before the long conversation.</p></div></Reveal><Reveal delay={100}><div className="faq-list">{faqs.map(([question, answer], index) => <div className={`faq-item ${activeFaq === index ? 'active' : ''}`} key={question}><button onClick={() => setActiveFaq(activeFaq === index ? null : index)}><span>{question}</span>{activeFaq === index ? <ChevronUp size={18} /> : <ChevronDown size={18} />}</button><div className="faq-answer">{answer}</div></div>)}</div></Reveal></div></section>
 
-      <section id="contact" className="contact-section"><div className="contact-glow" /><div className="container contact-inner"><Reveal><p className="eyebrow">05 / YOUR MOVE</p></Reveal><Reveal delay={80}><h2>Got a room<br /><em>to wake up?</em></h2></Reveal><Reveal delay={150}><p>Tell me what you're building, where your people are stuck and what a little momentum could unlock.</p></Reveal><Reveal delay={210}><a href="mailto:saunak.bhatta@gmail.com" className="contact-button">Let's make it happen <MoveUpRight size={20} /></a></Reveal><Reveal delay={260}><div className="contact-meta"><span>saunak.bhatta@gmail.com</span><span>+977 980-108-0883</span><span className="socials"><Linkedin size={16} /> @saunakbhatta</span></div></Reveal></div></section>
+      <section id="contact" className="contact-section"><div className="contact-glow" /><div className="container contact-inner"><Reveal><p className="eyebrow">05 / YOUR MOVE</p></Reveal><Reveal delay={80}><h2>Got a room<br /><em>to wake up?</em></h2></Reveal><Reveal delay={150}><p>Tell me what you're building, where your people are stuck and what a little momentum could unlock.</p></Reveal><Reveal delay={210}><a href="mailto:drnarayanacharya3@gmail.com" className="contact-button">Let's make it happen <MoveUpRight size={20} /></a></Reveal><Reveal delay={260}><div className="contact-meta"><span>drnarayanacharya3@gmail.com</span><span>+977 980-108-0883</span><span className="socials"><Linkedin size={16} /> @saunakbhatta</span></div></Reveal></div></section>
 
       <footer className="footer"><div className="container footer-inner"><a href="#top" className="brand">DR.NARAYAN<span>.</span></a><span>© 2024 Dr. Narayan. Keep moving.</span><a href="#top" className="back-top">Back to top ↑</a></div></footer>
     </main>
