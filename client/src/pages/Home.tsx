@@ -127,8 +127,9 @@ export default function Home() {
 
       <section id="about" className="about-section section-padding">
         <div className="container about-grid">
+          <Reveal className="about-section-label"><p className="eyebrow lavender">02 / THE HUMAN</p></Reveal>
           <Reveal className="about-image-wrap"><div className="about-image-frame"><img src="https://saunakbhatta.com/new/saunak%20on%20center.jpg" alt="Dr. Narayan on stage" /><div className="image-stamp">SB<br /><span>EST. 2007</span></div></div></Reveal>
-          <div className="about-copy"><Reveal><p className="eyebrow lavender">02 / THE HUMAN</p></Reveal><Reveal delay={70}><h2>Warm heart.<br /><span>Sharp point.</span></h2></Reveal><Reveal delay={140}><p>I'm Dr. Narayan — a curious human, obsessive observer and believer in the untapped magic of a room full of people. For 17 years, I've been translating psychology, leadership and lived experience into moments people actually remember.</p></Reveal><Reveal delay={190}><p>My work sits somewhere between a keynote, a conversation and a dare. It is high-energy, grounded in research and always built for the humans in front of me.</p></Reveal><Reveal delay={240}><a href="#contact" className="text-link light-link">More about my story <ArrowRight size={16} /></a></Reveal></div>
+          <div className="about-copy"><Reveal delay={70}><h2>Warm heart.<br /><span>Sharp point.</span></h2></Reveal><Reveal delay={140}><p>I'm Dr. Narayan — a curious human, obsessive observer and believer in the untapped magic of a room full of people. For 17 years, I've been translating psychology, leadership and lived experience into moments people actually remember.</p></Reveal><Reveal delay={190}><p>My work sits somewhere between a keynote, a conversation and a dare. It is high-energy, grounded in research and always built for the humans in front of me.</p></Reveal><Reveal delay={240}><a href="#contact" className="text-link light-link">More about my story <ArrowRight size={16} /></a></Reveal></div>
         </div>
       </section>
 

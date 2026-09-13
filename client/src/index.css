@@ -105,3 +105,6 @@ button { font:inherit; }
   .work-intro-copy { padding-top:0; text-align:center; }
   .work-intro-copy .intro-copy { max-width:370px; margin:26px auto 0; }
 }
+
+/* Keep the About section title above its existing image and copy columns. */
+.about-section-label { grid-column:1 / -1; }
