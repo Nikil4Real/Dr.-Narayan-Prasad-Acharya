@@ -6,7 +6,9 @@ import {
   Check,
   ChevronDown,
   ChevronUp,
+  Facebook,
   Linkedin,
+  Menu,
   MoveUpRight,
   Play,
   Quote,
@@ -45,9 +47,9 @@ const capabilities = [
 ];
 
 const faqs = [
-  ["Who is Dr. Narayan?", "An award-winning speaker, corporate trainer, author and personal empowerment strategist based in Kathmandu, Nepal."],
+  ["Who is Dr. Narayan?", " A medical council registered doctor and world record holder in different twelve titles based in Chitwan, Nepal."],
   ["Can programs be customized?", "Yes. Every experience is designed around your people, goals, context and timeline."],
-  ["Where does he speak?", "Across Nepal and internationally, including the USA, Australia, India, Bangladesh and Japan."],
+  ["Where does he speak?", "All Across Nepal and internationally, including the India. You can also book him for virtual one-to-one sessions."],
 ];
 
 function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -94,7 +96,7 @@ export default function Home() {
           <a href="/contact" className="nav-cta" onClick={navigateTo("/contact", "contact")}>Bring the energy <ArrowUpRight size={15} /></a>
         </nav>
         <button className="menu-btn" aria-label={menuOpen ? "Close menu" : "Open menu"} onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <X size={22} /> : <img className="menu-image" src="/manus-storage/menu_dd303334.avif" alt="" />}
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </header>
 
@@ -112,24 +114,23 @@ export default function Home() {
           <Reveal className="hero-visual" delay={180}>
             <div className="hero-photo-wrap">
               <div className="photo-accent" />
-              <img src="/manus-storage/hero-dr-narayan_d75a808a.jpg" alt="Dr. Narayan speaking at a podium" className="hero-photo" />
-              <div className="photo-caption"><span>LIVE FROM THE STAGE</span><span className="caption-line" /><span>27°42'N</span></div>
+              <img src="/assets/hero.jpg" alt="Dr. Narayan speaking at a podium" className="hero-photo" />
+              <div className="photo-caption"><span>DR. NARAYAN PRASAD ACHARYA</span></div>
             </div>
-            <div className="floating-note"><Sparkles size={16} /><span>Energy is<br /><strong>contagious.</strong></span></div>
-          </Reveal>
+         </Reveal>
         </div>
-        <div className="hero-footer container"><span>Based in Kathmandu · Speaking everywhere</span><span className="scroll-cue"><span /> Scroll to explore</span></div>
+        <div className="hero-footer container"><span>Based in Chitwan · Speaking everywhere</span><span className="scroll-cue"><span /> Scroll to explore</span></div>
       </section>
 
       <section className="marquee-band" aria-label="Credentials">
-        <div className="marquee-track"><span>17 YEARS OF EXPERIENCE</span><i>✳</i><span>300,000+ LIVES TRAINED</span><i>✳</i><span>6 COUNTRIES</span><i>✳</i><span>ONE BIGGER QUESTION</span><i>✳</i><span>17 YEARS OF EXPERIENCE</span><i>✳</i><span>300,000+ LIVES TRAINED</span></div>
+        <div className="marquee-track"><span>9 YEARS OF EXPERIENCE</span><i>✳</i><span>10,000+ LIVES TRAINED</span><i>✳</i><span>2+ COUNTRIES</span><i>✳</i><span>ONE BIGGER QUESTION</span><i>✳</i><span>9 YEARS OF EXPERIENCE</span><i>✳</i><span>10,000+ LIVES TRAINED</span></div>
       </section>
 
       <section id="work" className="work-section section-padding">
         <div className="container">
           <div className="section-intro work-intro">
             <Reveal className="work-intro-label"><p className="eyebrow">01 / WORK</p></Reveal>
-            <Reveal className="work-photo" delay={70}><div className="work-photo-frame"><img src="/manus-storage/1000097855_195f0d3f.jpg" alt="Dr. Narayan speaking to an audience" /></div></Reveal>
+            <Reveal className="work-photo" delay={70}><div className="work-photo-frame"><img src="/assets/narayan.jpg" alt="Dr. Narayan speaking to an audience" /></div></Reveal>
             <div className="work-intro-copy"><Reveal delay={120}><h2>Less <span>“sit back.”</span><br />More <em>“let's go.”</em></h2></Reveal><Reveal delay={190}><p className="intro-copy">The best learning doesn't feel like learning. It feels like a new idea landing, a team clicking, a room finding its rhythm.</p></Reveal></div>
           </div>
           <div className="service-list">
@@ -141,8 +142,8 @@ export default function Home() {
       <section id="about" className="about-section section-padding">
         <div className="container about-grid">
           <Reveal className="about-section-label"><p className="eyebrow lavender">02 / THE HUMAN</p></Reveal>
-          <Reveal className="about-image-wrap"><div className="about-image-frame"><img src="/manus-storage/about-dr-narayan_cb7c622c.jpg" alt="Dr. Narayan on stage" /><div className="image-stamp">SB<br /><span>EST. 2007</span></div></div></Reveal>
-          <div className="about-copy"><Reveal delay={70}><h2>Warm heart.<br /><span>Sharp point.</span></h2></Reveal><Reveal delay={140}><p>I'm Dr. Narayan — a curious human, obsessive observer and believer in the untapped magic of a room full of people. For 17 years, I've been translating psychology, leadership and lived experience into moments people actually remember.</p></Reveal><Reveal delay={190}><p>My work sits somewhere between a keynote, a conversation and a dare. It is high-energy, grounded in research and always built for the humans in front of me.</p></Reveal><Reveal delay={240}><a href="/contact" onClick={navigateTo("/contact", "contact")} className="text-link light-link">More about my story <ArrowRight size={16} /></a></Reveal></div>
+          <Reveal className="about-image-wrap"><div className="about-image-frame"><img src="/assets/record.jpg" alt="Dr. Narayan on stage" /><div className="image-stamp">NPA<br /><span>SINCE 2017</span></div></div></Reveal>
+          <div className="about-copy"><Reveal delay={70}><h2>Warm heart.<br /><span>Sharp point.</span></h2></Reveal><Reveal delay={140}><p>I'm Dr. Narayan Prasad Acharya — a curious human, obsessive observer and believer in the untapped magic of a room full of people. For 09 years, I've been translating psychology, leadership and lived experience into moments people actually remember.</p></Reveal><Reveal delay={190}><p>My work sits somewhere between a keynote, a conversation and a dare. It is high-energy, grounded in research and always built for the humans in front of me.</p></Reveal><Reveal delay={240}><a href="/contact" onClick={navigateTo("/contact", "contact")} className="text-link light-link">More about my story <ArrowRight size={16} /></a></Reveal></div>
         </div>
       </section>
 
@@ -152,7 +153,7 @@ export default function Home() {
           <Reveal delay={80}><blockquote>“Dr. Narayan doesn't just speak to a room.<br /><span>He wakes it up.</span>”</blockquote></Reveal>
           <Reveal delay={150}><p className="quote-byline">— A room full of very awake people</p></Reveal>
           <div className="stats-grid">
-            {[['17', 'Years on stage'], ['300K+', 'People trained'], ['6', 'Countries reached'], ['12M+', 'Digital likes']].map(([number, label], i) => <Reveal key={label} delay={i * 70}><div className="stat-card"><strong>{number}</strong><span>{label}</span></div></Reveal>)}
+            {[['9+', 'Years on stage'], ['10K+', 'People trained'], ['2+', 'Countries reached'], ['10K+', 'Digital likes']].map(([number, label], i) => <Reveal key={label} delay={i * 70}><div className="stat-card"><strong>{number}</strong><span>{label}</span></div></Reveal>)}
           </div>
         </div>
       </section>
@@ -163,9 +164,9 @@ export default function Home() {
 
       <section className="faq-section section-padding"><div className="container faq-grid"><Reveal><div><p className="eyebrow lavender">04 / GOOD TO KNOW</p><h2>Curious?<br /><span>Good.</span></h2><p className="faq-lede">The short answers, before the long conversation.</p></div></Reveal><Reveal delay={100}><div className="faq-list">{faqs.map(([question, answer], index) => <div className={`faq-item ${activeFaq === index ? 'active' : ''}`} key={question}><button onClick={() => setActiveFaq(activeFaq === index ? null : index)}><span>{question}</span>{activeFaq === index ? <ChevronUp size={18} /> : <ChevronDown size={18} />}</button><div className="faq-answer">{answer}</div></div>)}</div></Reveal></div></section>
 
-      <section id="contact" className="contact-section"><div className="contact-glow" /><div className="container contact-inner"><Reveal><p className="eyebrow">05 / YOUR MOVE</p></Reveal><Reveal delay={80}><h2>Got a room<br /><em>to wake up?</em></h2></Reveal><Reveal delay={150}><p>Tell me what you're building, where your people are stuck and what a little momentum could unlock.</p></Reveal><Reveal delay={210}><a href="mailto:drnarayanacharya3@gmail.com" className="contact-button">Let's make it happen <MoveUpRight size={20} /></a></Reveal><Reveal delay={260}><div className="contact-meta"><span>drnarayanacharya3@gmail.com</span><span>+977 980-108-0883</span><span className="socials"><Linkedin size={16} /> @saunakbhatta</span></div></Reveal></div></section>
+      <section id="contact" className="contact-section"><div className="contact-glow" /><div className="container contact-inner"><Reveal><p className="eyebrow">05 / YOUR MOVE</p></Reveal><Reveal delay={80}><h2>Got a room<br /><em>to wake up?</em></h2></Reveal><Reveal delay={150}><p>Tell me what you're building, where your people are stuck and what a little momentum could unlock.</p></Reveal><Reveal delay={210}><a href="mailto:drnarayanacharya3@gmail.com" className="contact-button">Let's make it happen <MoveUpRight size={20} /></a></Reveal><Reveal delay={260}><div className="contact-meta"><span>drnarayanacharya3@gmail.com</span><span>+977 9845050241</span><span className="socials"><Facebook size={16} />Dr. Narayan Prasad Acharya</span></div></Reveal></div></section>
 
-      <footer className="footer"><div className="container footer-inner"><a href="/" className="brand" onClick={navigateTo("/", "top")}>DR.NARAYAN<span>.</span></a><span>© 2024 Dr. Narayan. Keep moving.</span><a href="/" className="back-top" onClick={navigateTo("/", "top")}>Back to top ↑</a></div></footer>
+      <footer className="footer"><div className="container footer-inner"><a href="/" className="brand" onClick={navigateTo("/", "top")}>DR.NARAYAN<span>.</span></a><span>© 2026 DR. NARAYAN PRASAD ACHARYA</span><a href="/" className="back-top" onClick={navigateTo("/", "top")}>BACK TO TOP ↑</a></div></footer>
     </main>
   );
 }
