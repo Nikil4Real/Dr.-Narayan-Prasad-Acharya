@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import {
   ArrowDownRight,
   ArrowRight,
@@ -61,24 +61,37 @@ export default function Home() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
+    const scrollToPath = () => {
+      const target = window.location.pathname.slice(1);
+      if (target) window.setTimeout(() => document.getElementById(target)?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+    };
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-visible")), { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => { observer.disconnect(); window.removeEventListener("scroll", onScroll); };
+    window.addEventListener("popstate", scrollToPath);
+    scrollToPath();
+    return () => { observer.disconnect(); window.removeEventListener("scroll", onScroll); window.removeEventListener("popstate", scrollToPath); };
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
+  const navigateTo = (path: string, sectionId?: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    closeMenu();
+    window.history.pushState({}, "", path);
+    if (sectionId) document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    else window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <main className="site-shell">
       <div className="grain" aria-hidden="true" />
       <header className={`nav-wrap ${scrolled ? "nav-scrolled" : ""}`}>
-        <a href="#top" className="brand" onClick={closeMenu}>DR.NARAYAN<span>.</span></a>
+        <a href="/" className="brand" onClick={navigateTo("/", "top")}>DR.NARAYAN<span>.</span></a>
         <nav className={`desktop-nav ${menuOpen ? "mobile-open" : ""}`}>
-          <a href="#work" onClick={closeMenu}>What I do</a>
-          <a href="#about" onClick={closeMenu}>About</a>
-          <a href="#proof" onClick={closeMenu}>Proof</a>
-          <a href="#contact" className="nav-cta" onClick={closeMenu}>Bring the energy <ArrowUpRight size={15} /></a>
+          <a href="/work" onClick={navigateTo("/work", "work")}>What I do</a>
+          <a href="/about" onClick={navigateTo("/about", "about")}>About</a>
+          <a href="/proof" onClick={navigateTo("/proof", "proof")}>Proof</a>
+          <a href="/contact" className="nav-cta" onClick={navigateTo("/contact", "contact")}>Bring the energy <ArrowUpRight size={15} /></a>
         </nav>
         <button className="menu-btn" aria-label={menuOpen ? "Close menu" : "Open menu"} onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <X size={22} /> : <img className="menu-image" src="/manus-storage/menu_dd303334.avif" alt="" />}
@@ -94,7 +107,7 @@ export default function Home() {
             <Reveal><p className="eyebrow"><span className="eyebrow-dot" /> SPEAKER / TRAINER / DOCTOR</p></Reveal>
             <Reveal delay={90}><h1>Make the room<br /><em>move.</em></h1></Reveal>
             <Reveal delay={160}><p className="hero-lede">I help ambitious people and teams turn potential into momentum — with perspective, play and a little more pulse.</p></Reveal>
-            <Reveal delay={220}><div className="hero-actions"><a href="#contact" className="button button-primary">Start a conversation <ArrowRight size={17} /></a><a href="#proof" className="text-link">See the proof <ArrowDownRight size={16} /></a></div></Reveal>
+            <Reveal delay={220}><div className="hero-actions"><a href="/contact" onClick={navigateTo("/contact", "contact")} className="button button-primary">Start a conversation <ArrowRight size={17} /></a><a href="/proof" onClick={navigateTo("/proof", "proof")} className="text-link">See the proof <ArrowDownRight size={16} /></a></div></Reveal>
           </div>
           <Reveal className="hero-visual" delay={180}>
             <div className="hero-photo-wrap">
@@ -129,7 +142,7 @@ export default function Home() {
         <div className="container about-grid">
           <Reveal className="about-section-label"><p className="eyebrow lavender">02 / THE HUMAN</p></Reveal>
           <Reveal className="about-image-wrap"><div className="about-image-frame"><img src="/manus-storage/about-dr-narayan_cb7c622c.jpg" alt="Dr. Narayan on stage" /><div className="image-stamp">SB<br /><span>EST. 2007</span></div></div></Reveal>
-          <div className="about-copy"><Reveal delay={70}><h2>Warm heart.<br /><span>Sharp point.</span></h2></Reveal><Reveal delay={140}><p>I'm Dr. Narayan — a curious human, obsessive observer and believer in the untapped magic of a room full of people. For 17 years, I've been translating psychology, leadership and lived experience into moments people actually remember.</p></Reveal><Reveal delay={190}><p>My work sits somewhere between a keynote, a conversation and a dare. It is high-energy, grounded in research and always built for the humans in front of me.</p></Reveal><Reveal delay={240}><a href="#contact" className="text-link light-link">More about my story <ArrowRight size={16} /></a></Reveal></div>
+          <div className="about-copy"><Reveal delay={70}><h2>Warm heart.<br /><span>Sharp point.</span></h2></Reveal><Reveal delay={140}><p>I'm Dr. Narayan — a curious human, obsessive observer and believer in the untapped magic of a room full of people. For 17 years, I've been translating psychology, leadership and lived experience into moments people actually remember.</p></Reveal><Reveal delay={190}><p>My work sits somewhere between a keynote, a conversation and a dare. It is high-energy, grounded in research and always built for the humans in front of me.</p></Reveal><Reveal delay={240}><a href="/contact" onClick={navigateTo("/contact", "contact")} className="text-link light-link">More about my story <ArrowRight size={16} /></a></Reveal></div>
         </div>
       </section>
 
@@ -152,7 +165,7 @@ export default function Home() {
 
       <section id="contact" className="contact-section"><div className="contact-glow" /><div className="container contact-inner"><Reveal><p className="eyebrow">05 / YOUR MOVE</p></Reveal><Reveal delay={80}><h2>Got a room<br /><em>to wake up?</em></h2></Reveal><Reveal delay={150}><p>Tell me what you're building, where your people are stuck and what a little momentum could unlock.</p></Reveal><Reveal delay={210}><a href="mailto:drnarayanacharya3@gmail.com" className="contact-button">Let's make it happen <MoveUpRight size={20} /></a></Reveal><Reveal delay={260}><div className="contact-meta"><span>drnarayanacharya3@gmail.com</span><span>+977 980-108-0883</span><span className="socials"><Linkedin size={16} /> @saunakbhatta</span></div></Reveal></div></section>
 
-      <footer className="footer"><div className="container footer-inner"><a href="#top" className="brand">DR.NARAYAN<span>.</span></a><span>© 2024 Dr. Narayan. Keep moving.</span><a href="#top" className="back-top">Back to top ↑</a></div></footer>
+      <footer className="footer"><div className="container footer-inner"><a href="/" className="brand" onClick={navigateTo("/", "top")}>DR.NARAYAN<span>.</span></a><span>© 2024 Dr. Narayan. Keep moving.</span><a href="/" className="back-top" onClick={navigateTo("/", "top")}>Back to top ↑</a></div></footer>
     </main>
   );
 }
